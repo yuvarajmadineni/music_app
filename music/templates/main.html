@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content%}
+{% if user.is_authenticated %}
+<h1 class="text-center">Welcome to the music world</h1>
+<p>Click onn language you want to listen </p>
+<a href="{%url 'telugu' %}">Telugu</a>
+<!-- <a href="{%url 'tamil'%}">Tamil</a> -->
+<a href="{%url 'english'%}">English</a>
+{% else %}
+<h1>please Login</h1>
+<a href="{%url 'login' %}">Login</a>
+{% endif %}
+{%endblock%}
