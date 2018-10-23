@@ -1,6 +1,8 @@
-from django.contrib.auth import authenticate, login
-from django.shortcuts import render
-from .models import
+from django.http import HttpResponse
 
-AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
-IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
+def index(request):
+    return HttpResponse("<h1>List of albums</h1>")
+
+def detail(request, album_id):
+    return HttpResponse("<h2>Details of the Ablum id: " + str(album_id) + "</h2>")
+    
