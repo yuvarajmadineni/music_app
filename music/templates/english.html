@@ -3,7 +3,8 @@
 {% block content%}
 {% if user.is_authenticated %}
 <h1 class="text-center">Choose the song</h1>
-<audio controls>
-  <source href=>
-    {% endif%}
+{% for ablum in all_albums %}
+      {{ ablum.title }}
+  {%endfor%}
+{% endif %}
 {% endblock %}
