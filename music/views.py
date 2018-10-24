@@ -3,8 +3,8 @@ from .models import Album
 from django.shortcuts import render
 from django.views.generic import ListView
 
-def index(request,pk):
-    all_albums = Album.objects.get(pk=pk)
+def index(request):
+    all_albums = Album.objects.all()
     context = {'album_list' : all_albums }
     return render(request, 'english.html', context)
 

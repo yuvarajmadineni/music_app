@@ -4,7 +4,7 @@
 {{album_list}}
   <ul>
 {% for album in album_list %}
-        <li>{{ album.title }} {{ album.id }}</li>
+        <li><a href="/music/{{ album.id }}/">{{ album.title }}</a></li>
 {% endfor %}
   </ul>
 {% endblock %}
