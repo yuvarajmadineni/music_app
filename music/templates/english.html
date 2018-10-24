@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% block content%}
-{% if user.is_authenticated %}
-<h1 class="text-center">Choose the song</h1>
-{% for ablum in all_albums %}
-      {{ ablum.title }}
-  {%endfor%}
-{% endif %}
+{{album_list}}
+  <ul>
+{% for album in album_list %}
+        <li>{{ album.title }} {{ album.id }}</li>
+{% endfor %}
+  </ul>
 {% endblock %}
