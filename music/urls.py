@@ -13,6 +13,7 @@ urlpatterns = [
     path('main/',TemplateView.as_view(template_name='main.html'),name='main'),
     url(r'^telugu/(?P<album_id>[0-9]+)/$',TemplateView.as_view(template_name='telugu.html'),name='telugu'),
     url(r'^english/', views.index,name='english'),
-    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^song/', views.detail, name='detail'),
+    url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='song'),
     url(r'^$', views.index, name='index'),
 ]

@@ -3,8 +3,7 @@
 {% block content%}
   <ul>
 {% for album in album_list %}
-        <li><a href="/music/english/{{ album.id }}/">{{ album.title }}</a></li>
+        <li><a href="/music/{{ album.id }}/">{{ album.title }}</a></li>
 {% endfor %}
-<!-- <h1>{{ album_list.title }}</h1> -->
   </ul>
 {% endblock %}
