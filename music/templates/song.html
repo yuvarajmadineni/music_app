@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% block content%}
-{{ album }}
+<img src="{{ album_list.albums_logo }}">
+
+<h1>{{ album_list.title}}</h1>
+<h4>{{ album_list.artist }}</h4>
+
+<ul>
+    {% for item in album_list.song_set.all %}
+      <li>{{ item.song_title }} - {{ item.file_type }}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
