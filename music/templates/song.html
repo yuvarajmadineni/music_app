@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% block content%}
-<img src="{{ album_list.albums_logo }}">
 
-<h1>{{ album_list.title}}</h1>
-<h4>{{ album_list.artist }}</h4>
 
-<ul>
-    {% for item in album_list.song_set.all %}
-      <li>{{ item.song_title }} - {{ item.file_type }}</li>
-    {% endfor %}
-</ul>
-
+<div class="card" style="width:1000px">
+    <img class="card-img-top" src="/static/music/images/{{ album_list.albums_logo }}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Name of the Movie : {{ album_list.title}}</h4>
+      <h4>Music Director : {{ album_list.artist }}</h4>
+      <ul>
+          {% for item in album_list.song_set.all %}
+            <li>{{ item.song_title }} - {{ item.file_type }}</li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endblock %}

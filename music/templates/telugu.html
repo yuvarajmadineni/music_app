@@ -2,10 +2,8 @@
 {% load bootstrap4 %}
 {% block content%}
 {% if user.is_authenticated %}
-<h1 class="text-center">Choose the song</h1>
-{% for album in ablum_id %}
-
-
-
+  {% for album in album_lists %}
+    <p>{{ album.tittle }}</p>
+  {% endfor %}
 {% endif%}
 {%endblock%}

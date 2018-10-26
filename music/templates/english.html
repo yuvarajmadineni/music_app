@@ -1,10 +1,48 @@
-{% extends 'base.html' %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 {% load bootstrap4 %}
 {% block content%}
+{% load staticfiles %}
+<title>Music App - English</title>
+<link rel="stylesheet" type="text/css" href="{% static 'music/style.css'%}">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="{% url 'main' %}">Music Web App</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'main' %}">Main</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+    </li>
+  </ul>
+</nav>
+{% if album_list %}
+  <h2>Albums are : </h2>
   <ul>
 {% for album in album_list %}
-        <li><a href="/music/{{ album.id }}/">{{ album.title }}</a></li>
-{% endfor %}
+<div class="card" style="width:500px">
+  <div class="container">
+    <img class="card-img-top" src="/static/music/images/{{ album.albums_logo }}" alt="Card image" style="width:97%">
+    <div class="card-body">
+      <h4 class="card-title">Name of the Movie : {{ album.title}}</h4>
+      <a href="/music/english/{{ album.id }}/" class="btn btn-primary">{{ album.title }}</a>
+    </div>
+    </div>
+  </div>
+<br>
 
+{% endfor %}
   </ul>
+  {% else %}
+    <h3>There are no songs in this </h3>
+    {% endif %}
 {% endblock %}

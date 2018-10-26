@@ -9,9 +9,14 @@ def index(request):
     context = {'album_list' : all_albums }
     return render(request, 'english.html', context)
 
-def detail(request, album_id):
+def detail(request, pk):
     try:
-        album = Album.objects.get(pk=album_id)
+        album = Album.objects.get(pk=pk)
     except Album.DoesNotExist:
         raise Http404("Ablum is not there")
     return render(request, 'song.html', {'album_list' : album })
+
+def telugu(request):
+    all_albums = Album.objects.all()
+    context = {'album_lists' : all_albums }
+    return render(request, 'telugu.html', context)
