@@ -11,6 +11,10 @@
       <ul>
           {% for item in album_list.song_set.all %}
             <li>{{ item.song_title }} - {{ item.file_type }}</li>
+
+            <audio controls>
+                   <source src="/static/music/songs/{{ item.location }}" type="audio/mp3">
+               </audio>
           {% endfor %}
       </ul>
     </div>
