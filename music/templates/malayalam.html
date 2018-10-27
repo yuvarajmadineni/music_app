@@ -5,6 +5,9 @@
   <link rel="icon" type="image/jpeg" href="/static/music/images/music.jpeg" sizes="350x500">
 {% load bootstrap4 %}
 {% block content%}
+{% load staticfiles %}
+<title>Music App - malayalam</title>
+<link rel="stylesheet" type="text/css" href="{% static 'music/style.css'%}">
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
   <a class="navbar-brand" href="{% url 'main' %}">Music Web App</a>
@@ -23,23 +26,27 @@
     </li>
   </ul>
 </nav>
-<title>Music Web App - {{ album_list.title}}</title>
-<div class="card" style="width:1000px" align="center">
-    <img class="card-img-top" src="/static/music/images/{{ album_list.albums_logo }}" alt="Card image" style="width:100%">
-    <div class="card-body">
-      <div class="col-sm-4">
-      <h4 class="card-title">Name of the Movie : {{ album_list.title}}</h4>
-      <h4>Music Director : {{ album_list.artist }}</h4>
-      <ul>
-          {% for item in album_list.song_set.all %}
-            <li>{{ item.song_title }} - {{ item.file_type }}</li>
-
-            <audio controls>
-                   <source src="/static/music/songs/{{ item.location }}" type="audio/mp3">
-               </audio>
-          {% endfor %}
-      </ul>
-    </div>
-    </div>
-  </div>
+{% if album_list %}
+  <h2>Albums are : </h2>
+  <ul>
+{% for album in album_list %}
+  {% if album.language == "malayalam" %}
+    <div class="card" style="width:500px">
+      <div class="container">
+        <a href="/music/malayalam/{{ album.id }}/">
+        <img class="card-img-top" src="/static/music/images/{{ album.albums_logo }}" alt="Card image" style="width:97%">
+        </a>
+        <div class="card-body">
+          <h4 class="card-title">Name of the Movie : {{ album.title}}</h4>
+          <a href="/music/malayalam/{{ album.id }}/" class="btn btn-primary">{{ album.title }}</a>
+        </div>
+        </div>
+      </div>
+    <br>
+  {% endif %}
+{% endfor %}
+  </ul>
+  {% else %}
+    <h3>There are no songs in this </h3>
+    {% endif %}
 {% endblock %}

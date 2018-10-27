@@ -1,6 +1,7 @@
 
 
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Album(models.Model):
@@ -17,8 +18,14 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     file_type = models.CharField(max_length=10)
     song_title = models.CharField(max_length = 250)
-    is_liked = models.BooleanField(default = False)
     location = models.FileField()
 
     def __str__(self):
         return self.song_title
+
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    song = models.ForeignKey(Song, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.song.song_title
