@@ -12,8 +12,9 @@ urlpatterns = [
     path('accounts/',include('django.contrib.auth.urls')),
     path('main/',TemplateView.as_view(template_name='main.html'),name='main'),
     url(r'^telugu/$',views.telugu,name='telugu'),
-    url(r'^english/$', views.index,name='english'),
+    url(r'telugu/(?P<pk>[0-9]+)/$', views.detail, name='song'),
+    url(r'^english/$', views.english,name='english'),
     # url(r'^song/', views.detail, name='detail'),
     url(r'^english/(?P<pk>[0-9]+)/$', views.detail, name='song'),
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.english, name='english'),
 ]

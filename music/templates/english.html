@@ -29,9 +29,12 @@
   <h2>Albums are : </h2>
   <ul>
 {% for album in album_list %}
+  {% if album.language == "english" %}
 <div class="card" style="width:500px">
   <div class="container">
+    <a href="/music/english/{{ album.id }}/">
     <img class="card-img-top" src="/static/music/images/{{ album.albums_logo }}" alt="Card image" style="width:97%">
+    </a>
     <div class="card-body">
       <h4 class="card-title">Name of the Movie : {{ album.title}}</h4>
       <a href="/music/english/{{ album.id }}/" class="btn btn-primary">{{ album.title }}</a>
@@ -39,7 +42,7 @@
     </div>
   </div>
 <br>
-
+ {% endif %}
 {% endfor %}
   </ul>
   {% else %}

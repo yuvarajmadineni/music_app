@@ -4,7 +4,7 @@ from .models import Album
 from django.shortcuts import render
 from django.views.generic import ListView
 
-def index(request):
+def english(request):
     all_albums = Album.objects.all()
     context = {'album_list' : all_albums }
     return render(request, 'english.html', context)
@@ -18,5 +18,5 @@ def detail(request, pk):
 
 def telugu(request):
     all_albums = Album.objects.all()
-    context = {'album_lists' : all_albums }
+    context = {'album_list' : all_albums }
     return render(request, 'telugu.html', context)

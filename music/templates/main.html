@@ -2,11 +2,26 @@
 {% load bootstrap4 %}
 {% block content%}
 {% if user.is_authenticated %}
-<h1 class="text-center">Welcome to the music world</h1>
-<p>Click onn language you want to listen </p>
+<h1 class="text-center">Welcome to the music world : {{ user.username }}</h1>
+<p>Click on language you want to listen</p>
+<div class="card" style="width:200px">
+    <a href="{% url 'english' %}">
+    <img class="card-img-top" src="/static/music/images/english.jpeg" alt="Card image" style="width:100%">
 
-<a href="{% url 'english' %}">English</a>
-<a href="{% url 'telugu' %}">Telugu</a>
+    <div class="card-body">
+          </a>
+      <a href="{% url 'english' %}">English</a>
+    </div>
+  </div>
+<br>
+  <div class="card" style="width:200px">
+    <a href="{% url 'telugu' %}">
+      <img class="card-img-top" src="/static/music/images/telugu.jpeg" alt="Card image" style="width:100%">
+      <div class="card-body">
+        </a>
+        <a href="{% url 'telugu' %}">Telugu</a>
+      </div>
+    </div>
 {% else %}
 <h1>please Login</h1>
 <a href="{%url 'login' %}">Login</a>
