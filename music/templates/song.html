@@ -25,21 +25,26 @@
 </nav>
 <title>Music Web App - {{ album_list.title}}</title>
 <div class="card" style="width:1000px" align="center">
+
     <img class="card-img-top" src="/static/music/images/{{ album_list.albums_logo }}" alt="Card image" style="width:100%">
     <div class="card-body">
-      <div class="col-sm-4">
+      <div class="col-md-4">
       <h4 class="card-title">Name of the Movie : {{ album_list.title}}</h4>
       <h4>Music Director : {{ album_list.artist }}</h4>
       <ul>
           {% for item in album_list.song_set.all %}
-            <li>{{ item.song_title }} - {{ item.file_type }}</li>
+            <li>{{ item.song_title }}</li>
 
             <audio controls>
                    <source src="/static/music/songs/{{ item.location }}" type="audio/mp3">
-               </audio>
+            </audio>
           {% endfor %}
       </ul>
     </div>
     </div>
   </div>
 {% endblock %}
+
+
+
+  <div class="form-group col-md-3">

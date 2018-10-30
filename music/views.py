@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.http import Http404
-from .models import Album, Song, Favorite
+from .models import Album, Song, Favorite, Userdata
 from django.shortcuts import render
 from django.views.generic import ListView
 
@@ -30,3 +30,8 @@ def favorite(request):
     all_songs = Favorite.objects.filter(user=request.user)
     context = {'favorite' : all_songs }
     return render(request, 'favorite.html', context)
+
+def userinfo(request):
+    all_data = Userdata.objects.filter(user=request.user)
+    context = { 'user_info' : all_data[0] }
+    return render(request, 'home.html', context)

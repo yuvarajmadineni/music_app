@@ -17,9 +17,6 @@
   <ul class="navbar-nav">
 
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
-    </li>
-    <li class="nav-item">
       <a class="nav-link" href="{% url 'favorite' %}">Favorite Songs</a>
     </li>
     <li class="nav-item">
@@ -28,9 +25,13 @@
   </ul>
 </nav>
 <div class="jumbotron">
-<h1>   Welcome {{ user.username }}!!! </h1>
+  {{ user.username }}
 </div>
-   <p><a href="{% url 'main' %}"> Main</a></p>
+<h1>hi</h1>
+  <h1>{{ user_info.lang }}</h1>
+   <p><a href="{% url 'telugu' %}">{{ user_info.lang }}</a></p>
+   <img src="/static/music/images/{{ user_info.user_picture }}" style="width:10%">
+
 
 {% else %}
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

@@ -8,7 +8,7 @@ class Album(models.Model):
     artist = models.CharField(max_length=250)
     title = models.CharField(max_length=200)
     genre = models.CharField(max_length=100)
-    albums_logo = models.CharField(max_length=1000)
+    albums_logo = models.ImageField(upload_to='',blank=True, null=True)
     language = models.CharField(max_length=20)
 
     def __str__(self):
@@ -29,3 +29,11 @@ class Favorite(models.Model):
 
     def __str__(self):
         return self.song.song_title
+
+class Userdata(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_picture = models.ImageField(upload_to='',blank=True, null=True)
+    lang = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.user.username

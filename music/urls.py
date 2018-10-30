@@ -14,9 +14,9 @@ urlpatterns = [
     url(r'telugu/(?P<pk>[0-9]+)/$', views.detail, name='song'),
     url(r'^english/$', views.english,name='english'),
     url(r'^english/(?P<pk>[0-9]+)/$', views.detail, name='song'),
-    url(r'^$', views.english, name='english'),
     url(r'^malayalam/$',views.malayalam,name='malayalam'),
     url(r'malayalam/(?P<pk>[0-9]+)/$', views.detail, name='song'),
     url(r'^favorite/$',views.favorite,name='favorite'),
     url(r'^favorite/(?P<pk>[0-9]+)/$', views.detail, name='song'),
+    path('home/',views.userinfo,name='home'),
 ]

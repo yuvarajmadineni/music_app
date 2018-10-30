@@ -4,6 +4,7 @@
 {% if user.is_authenticated %}
 <h1 class="text-center">Welcome to the music world : {{ user.username }}</h1>
 <p>Click on language you want to listen</p>
+<div class="col-sm-3">
 <div class="card" style="width:200px">
     <a href="{% url 'english' %}">
     <img class="card-img-top" src="/static/music/images/english.jpeg" alt="Card image" style="width:100%">
@@ -13,7 +14,9 @@
       <a href="{% url 'english' %}">English</a>
     </div>
   </div>
+    </div>
 <br>
+<div class="container">
   <div class="card" style="width:200px">
     <a href="{% url 'telugu' %}">
       <img class="card-img-top" src="/static/music/images/telugu.jpeg" alt="Card image" style="width:100%">
@@ -22,16 +25,21 @@
         <a href="{% url 'telugu' %}">Telugu</a>
       </div>
     </div>
+    </div>
     <br>
+<div class="container">
       <div class="card" style="width:200px">
+
         <a href="{% url 'malayalam' %}">
           <img class="card-img-top" src="/static/music/images/malayalam.jpeg" alt="Card image" style="width:100%">
           <div class="card-body">
             </a>
             <a href="{% url 'malayalam' %}">Malayalam</a>
           </div>
+            </div>
         </div>
      <br>
+     <div class="container">
         <div class="card" style="width:200px">
           <a href="{% url 'favorite' %}">
             <img class="card-img-top" src="/static/music/images/favorite.jpeg" alt="Card image" style="width:100%">
@@ -40,6 +48,8 @@
               <a href="{% url 'favorite' %}">Favorite Songs</a>
             </div>
           </div>
+            </div>
+            </div>
 
 {% else %}
 <h1>please Login</h1>

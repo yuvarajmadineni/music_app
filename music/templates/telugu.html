@@ -31,7 +31,9 @@
   <ul>
 {% for album in album_list %}
   {% if album.language == "telugu" %}
+    <div class="col-xl-2">
     <div class="card" style="width:500px">
+
       <div class="container">
         <a href="/music/telugu/{{ album.id }}/">
         <img class="card-img-top" src="/static/music/images/{{ album.albums_logo }}" alt="Card image" style="width:97%">
@@ -39,6 +41,7 @@
         <div class="card-body">
           <h4 class="card-title">Name of the Movie : {{ album.title}}</h4>
           <a href="/music/telugu/{{ album.id }}/" class="btn btn-primary">{{ album.title }}</a>
+        </div>
         </div>
         </div>
       </div>
