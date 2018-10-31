@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<h1>Add new Albums</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
+    </form>
+{% endblock %}

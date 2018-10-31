@@ -19,4 +19,6 @@ urlpatterns = [
     url(r'^favorite/$',views.favorite,name='favorite'),
     url(r'^favorite/(?P<pk>[0-9]+)/$', views.detail, name='song'),
     path('home/',views.userinfo,name='home'),
+    path('newalbum/',views.addnewalbum, name='addnewalbum'),
+    path('newsong/',views.addnewsong, name='addnewsong'),
 ]
