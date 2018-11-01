@@ -21,4 +21,5 @@ urlpatterns = [
     path('home/',views.userinfo,name='home'),
     path('newalbum/',views.addnewalbum, name='addnewalbum'),
     path('newsong/',views.addnewsong, name='addnewsong'),
+    path('userprofile/',views.profileuser, name='profileuser'),
 ]

@@ -3,7 +3,7 @@ from django.http import Http404
 from .models import Album, Song, Favorite, Userdata
 from django.shortcuts import render
 from django.views.generic import ListView
-from .forms import AlbumForm, SongsForm
+from .forms import AlbumForm, SongsForm, FavoriteForm
 
 def english(request):
     all_albums = Album.objects.all()
@@ -59,3 +59,15 @@ def addnewsong(request):
         print("hii")
         form = SongsForm()
         return render(request, 'addnewsong.html' , {'form' : form})
+
+def profileuser(request):
+    if request.method == "POST":
+        form = FavoriteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profileuser', pk=song.pk)
+
+    else:
+        print("hii")
+        form = FavoriteForm()
+        return render(request, 'profileuser.html' , {'form' : form})
