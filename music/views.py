@@ -53,10 +53,9 @@ def addnewsong(request):
         form = SongsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('addnewsong', pk=song.pk)
+            return redirect('addnewsong')
 
     else:
-        print("hii")
         form = SongsForm()
         return render(request, 'addnewsong.html' , {'form' : form})
 
@@ -65,9 +64,8 @@ def profileuser(request):
         form = FavoriteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('profileuser', pk=song.pk)
+            return redirect('profileuser')
 
     else:
-        print("hii")
         form = FavoriteForm()
         return render(request, 'profileuser.html' , {'form' : form})

@@ -2,10 +2,20 @@
 {% load bootstrap4 %}
 {% block content %}
 
-<h1>Add new songs</h1>
+<h1>Profile Data</h1>
+<div class="col-xl-2" class="items">
+<div class="card-top" style="width:160em">
+
+  <div class="container">
     <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form.as_p }}
         {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
     </form>
+
+    </div>
+    </div>
+    </div>
+  </div>
+
 {% endblock %}
