@@ -1,6 +1,5 @@
 # music_app
-Music website
-It's a Music Website Written in Django
+It's a Music Website.
 Used Languages:
   1.Django
   2.Python
