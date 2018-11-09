@@ -16,7 +16,7 @@
   </div>
     </div>
 <br>
-<div class="container">
+{#<div class="container">#}
   <div class="card" style="width:200px">
     <a href="{% url 'telugu' %}">
       <img class="card-img-top" src="/static/music/images/telugu.jpeg" alt="Card image" style="width:100%">
@@ -25,9 +25,9 @@
         <a href="{% url 'telugu' %}">Telugu</a>
       </div>
     </div>
-    </div>
+{#    </div>#}
     <br>
-<div class="container">
+{#<div class="container">#}
       <div class="card" style="width:200px">
 
         <a href="{% url 'malayalam' %}">
@@ -37,9 +37,9 @@
             <a href="{% url 'malayalam' %}">Malayalam</a>
           </div>
             </div>
-        </div>
+{#        </div>#}
      <br>
-     <div class="container">
+{#     <div class="container">#}
         <div class="card" style="width:200px">
           <a href="{% url 'favorite' %}">
             <img class="card-img-top" src="/static/music/images/favorite.jpeg" alt="Card image" style="width:100%">
@@ -49,10 +49,35 @@
             </div>
           </div>
             </div>
+{#            </div>#}
+    {% if user.is_superuser %}
+             <div class="card" style="width:200px">
+
+        <a href="{% url 'malayalam' %}">
+          <img class="card-img-top" src="/static/music/images/malayalam.jpeg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            </a>
+            <a href="{% url 'malayalam' %}">Malayalam</a>
+          </div>
             </div>
+        {% endif %}
 
 {% else %}
 <h1>please Login</h1>
 <a href="{%url 'login' %}">Login</a>
+    <a href="{%url 'signup' %}">Sign up</a>
 {% endif %}
 {%endblock%}
+
+
+
+
+
+ <div class="card" style="width:200px">
+
+        <a href="{%url 'login' %}">Login</a>
+          <img class="card-img-top" src="/static/music/images/malayalam.jpeg" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <a href="{% url 'malayalam' %}">Malayalam</a>
+          </div>
+            </div>

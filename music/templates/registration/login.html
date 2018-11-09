@@ -4,7 +4,7 @@
 <h1>Login</h1>
   <form method="post">
     {% csrf_token %}
-    {% bootstrap_form form%}
+    {% bootstrap_form form %}
     {% bootstrap_button "Login" button_type="submit" button_class="btn-primary" %}
   </form>
 {% endblock %}
