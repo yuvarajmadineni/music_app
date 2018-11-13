@@ -1,4 +1,5 @@
 # music_app
+[![Gitter](https://gitter.im/music_app/contributers)](https://gitter.im/music_app/contributers)
 
 This Application was a Music Application consits of Different Languages of album of songs with user favorite songs and user profile data.
 
