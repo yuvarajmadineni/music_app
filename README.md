@@ -1,10 +1,42 @@
 # music_app
-It's a Music Website.
-Used Languages:
-  1.Django
-  2.Python
-  3.HTML
-  4.CSS
-  5.Bootstrap4
 
-It consits album of songs of different languages and we can store the favorite songs in it and users last listened songs will stored in the user's profile.
+This Application was written in Django, In this 
+
+## Languages Used 
+
+-Django 
+-Python3
+-HTML
+-CSS
+-Bootstrap4
+
+## Installing
+ 
+- Fork the repository. 
+- Clone the repo using the terminal command. Make sure you replace `username` with your GitHub username.
+```bash
+https://github.com/raghavendraivv/music_app.git 
+```
+- To run the code, type the following commands in terminal.
+Installing Virtual environment
+```bash
+ virtualenv -p python3 .
+```
+Now Activate Your environment
+```bash
+source bin/activate
+```
+Install Django
+```bash 
+pip install django
+```
+ 
+
+## Built With
+- Framework used: Django (version: 2.1.1)
+- Python (version: 3.6.5)
+ 
+## License
+This project is licensed under the MIT License, see the [LICENSE.md](https://github.com/raghavendraivv/music_app/blob/master/LICENSE) for more details.
+    
+
