@@ -5,7 +5,7 @@ This Application was a Music Application consits of Different Languages of album
 
 ## Languages used 
 
-- Django .
+- Django(2.1.1) .
 - Python3.
 - HTML.
 - CSS.
@@ -31,11 +31,12 @@ Install Django
 ```bash 
 pip install django
 ```
- Migrate The Models
+To Migrate the models
  ```bash
  python manage.py makemigrations
  python manage.py migrate
  ```
+ Database used in this was inbuilt django database only.
 
 ## Built With
 - Framework used: Django (version: 2.1.1)
