@@ -23,16 +23,16 @@
     </li>
   </ul>
 </nav>
-<title>Music Web App - Favorites</title>
-{% for item in favorite %}
+<title>Music Web App : Favorites</title>
+{% for i in favorite %}
   <div class="card" style="width=50px">
-    <img class="card-img-top" src="/static/music/images/{{ item.song.album.albums_logo }}" alt="Card image" style="width:10%">
+    <img class="card-img-top" src="/static/music/images/{{ i.song.album.albums_logo }}" alt="Card image" style="width:10%">
     <div class="card-body">
-      <h4 class="card-title">Name of the Movie : {{ item.song.album.title}}</h4>
-      <h4>Music Director : {{ item.song.album.artist }}</h4>
+      <h4 class="card-title">Name of the Movie : {{ i.song.album.title}}</h4>
+      <h4>Music Director : {{ i.song.album.artist }}</h4>
       <ul>
 
-            <li>{{ item.song.song_title }} - {{ item.song.file_type }}</li>
+            <li>{{ i.song.song_title }} - {{ i.song.file_type }}</li>
 
             <audio controls>
                    <source src="/static/music/songs/{{ item.song.location }}" type="audio/mp3">
